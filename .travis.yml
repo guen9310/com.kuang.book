@@ -15,6 +15,23 @@ before_install:
   chmod +x gradlew
 script: "./gradlew clean build"
 
+# Bucket
+before_deploy:
+  - zip -r freelec-springboot2-webservice *
+  - mkdir -p deploy
+  - mv freelec-springboot2-webservice.zip deploy/freelec-springboot2-webservice.zip
+
+deploy:
+  - provider: s3
+    access_key_id: AKIA35W32QHSG3QW2WXS
+    secret_access_key: 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
+    bucket: mybucket-springboot-build
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private
+    local_dir: deploy
+
+
 # CI complete
 notifications:
   email:
