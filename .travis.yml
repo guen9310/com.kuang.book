@@ -32,6 +32,7 @@ deploy:
     local_dir: deploy
     wait-until-deployed: true
 
+#codedploy
   - provider: codedeploy
     access_key_id: AKIA35W32QHSG3QW2WXS
     secret_access_key: 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
