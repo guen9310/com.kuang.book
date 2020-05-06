@@ -16,4 +16,5 @@ script: "./gradlew clean build"
 # CI complete
 notifications:
   email:
-    recipients: guen9310@gmail.com
+    recipients:
+      - guen9310@gmail.com
