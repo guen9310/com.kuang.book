@@ -33,8 +33,8 @@ deploy:
     wait-until-deployed: true
 
   - provider: codedeploy
-    access_key_id:
-    secret_access_key:
+    access_key_id: AKIA35W32QHSG3QW2WXS
+    secret_access_key: 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
     bucket: mybucket-springboot-build
     key: freelec-springboot2-webservice.zip
     bundle_type: zip
