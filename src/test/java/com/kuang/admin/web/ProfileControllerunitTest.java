@@ -17,21 +17,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ProfileControllerunitTest {
 
-    @LocalServerPort
-    private int port;
-
-    @Autowired
-    private TestRestTemplate restTemplate;
-
-    @Test
-    public void profile_expected() throws Exception {
-        String expected = "default";
-
-        ResponseEntity<String> response = restTemplate.getForEntity("/profile",String.class);
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(response.getBody()).isEqualTo(expected);
-    }
-
     @Test
     public void real_profile_read(){
         //given
