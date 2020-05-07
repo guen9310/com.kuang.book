@@ -23,13 +23,11 @@ public class ProfileControllerTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    public void profile_expected() throws Exception{
+    public void profile_expected() throws Exception {
         String expected = "default";
 
-        ResponseEntity<String> respone = restTemplate.
-                getForEntity("/profile",String.class);
-        assertThat(respone.getStatusCode()).
-                isEqualTo(HttpStatus.OK);
-        assertThat(respone.getBody()).isEqualTo(expected);
+        ResponseEntity<String> response = restTemplate.getForEntity("/profile", String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isEqualTo(expected);
     }
 }
