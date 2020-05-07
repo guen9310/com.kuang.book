@@ -24,8 +24,8 @@ before_deploy:
 deploy:
 #s3
   - provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    access_key_id: $AWS_ACCESS_KEY # Travis repo setting
+    secret_access_key: $AWS_SECRET_KEY # Travis repo setting
     bucket: mybucket-springboot-build
     region: ap-northeast-2
     skip_cleanup: true
@@ -35,8 +35,8 @@ deploy:
 
 #codedploy
   - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    access_key_id: $AWS_ACCESS_KEY # Travis repo setting
+    secret_access_key: $AWS_SECRET_KEY # Travis repo setting
     bucket: mybucket-springboot-build
     key: freelec-springboot2-webservice.zip
     bundle_type: zip
